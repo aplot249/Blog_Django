@@ -4,5 +4,9 @@
 """
 import pymysql
 
-version_info = (1, 3, 12, "final", 0)
+"""
+    如果不加 version_info 会报错如下:
+        django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3
+"""
+pymysql.version_info = (1, 3, 13, "final", 0)
 pymysql.install_as_MySQLdb()
