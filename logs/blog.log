@@ -1,0 +1,38 @@
+INFO 2020-06-11 19:13:06,221 autoreload 598 Watching for file changes with StatReloader
+ERROR 2020-06-11 19:13:10,456 log 228 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\develop\python\python3.6.6\python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\develop\python\python3.6.6\python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\develop\python\python3.6.6\python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: log() takes 0 positional arguments but 1 was given
+ERROR 2020-06-11 19:13:10,458 basehttp 157 "GET / HTTP/1.1" 500 75338
+INFO 2020-06-11 19:13:11,442 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\urls.py changed, reloading.
+INFO 2020-06-11 19:13:13,017 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:13:32,644 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:16:36,117 basehttp 157 "GET / HTTP/1.1" 200 4
+INFO 2020-06-11 19:18:37,535 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\settings.py changed, reloading.
+INFO 2020-06-11 19:18:39,245 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:19:04,793 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\settings.py changed, reloading.
+INFO 2020-06-11 19:19:06,732 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:19:17,679 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\settings.py changed, reloading.
+INFO 2020-06-11 19:19:48,163 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:20:02,266 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\settings.py changed, reloading.
+INFO 2020-06-11 19:20:04,260 autoreload 598 Watching for file changes with StatReloader
+INFO 2020-06-11 19:20:20,765 basehttp 157 "GET /static/index.html HTTP/1.1" 200 12002
+INFO 2020-06-11 19:20:20,874 basehttp 157 "GET /static/md_css/monokai.css HTTP/1.1" 200 4118
+INFO 2020-06-11 19:20:20,879 basehttp 157 "GET /static/common/common.css HTTP/1.1" 200 381
+INFO 2020-06-11 19:20:20,886 basehttp 157 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 200 12949
+INFO 2020-06-11 19:20:20,888 basehttp 157 "GET /static/common/jquery.pagination.css HTTP/1.1" 200 549
+INFO 2020-06-11 19:20:20,888 basehttp 157 "GET /static/js/host.js HTTP/1.1" 200 35
+INFO 2020-06-11 19:20:20,891 basehttp 157 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2020-06-11 19:20:20,896 basehttp 157 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97168
+INFO 2020-06-11 19:20:20,898 basehttp 157 "GET /static/img/1.jpg HTTP/1.1" 200 78682
+INFO 2020-06-11 19:20:20,900 basehttp 157 "GET /static/js/vue-2.5.16.js HTTP/1.1" 200 300254
+INFO 2020-06-11 19:20:21,169 basehttp 157 "GET /static/js/common.js HTTP/1.1" 200 919
+INFO 2020-06-11 19:20:21,170 basehttp 157 "GET /static/js/index.js HTTP/1.1" 200 552
+INFO 2020-06-11 19:20:21,196 basehttp 157 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 200 2935
+INFO 2020-06-11 19:20:48,168 autoreload 222 D:\develop\python\pycharm\pc_workspace\my_blog_project\my_blog\my_blog\settings.py changed, reloading.
+INFO 2020-06-11 19:20:50,311 autoreload 598 Watching for file changes with StatReloader
