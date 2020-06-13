@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 
-from home.models import ArticleCategory
+from home.models import ArticleCategory, Article
 from users.models import User
 from django.db import DatabaseError
 from django.views import View
@@ -389,6 +389,51 @@ class WriteBlogView(View):
         categories = ArticleCategory.objects.all()
 
         context = {
-            'category': categories
+            'categories': categories
         }
         return render(request, 'write_blog.html', context=context)
+
+    @staticmethod
+    def post(request):
+        """
+        接收前端的 POST 请求: 将数据保存到数据库
+        :param request: 请求
+        :return: 返回响应
+        """
+        # 接收数据
+        avatar = request.FILES.get('avatar')
+        title = request.POST.get('title')
+        category_id = request.POST.get('category')
+        tags = request.POST.get('tags')
+        summary = request.POST.get('summary')
+        content = request.POST.get('content')
+        user = request.user
+
+        # 验证数据是否齐全
+        if not all([avatar, title, category_id, summary, content]):
+            return HttpResponseBadRequest('参数不全')
+
+        # 判断文章分类的 ID 是否正确
+        try:
+            article_category = ArticleCategory.objects.get(id=category_id)
+        except ArticleCategory.DoesNotExist:
+            return HttpResponseBadRequest('没有此分类信息')
+
+        # 保存到数据库
+        try:
+            article = Article.objects.create(
+                author=user,
+                avatar=avatar,
+                category=article_category,
+                tags=tags,
+                title=title,
+                summary=summary,
+                content=content
+            )
+        except Exception as e:
+            logging.error(e)
+            return HttpResponseBadRequest('发布失败,请稍后再试')
+
+        # 返回响应: 跳转到首页
+        return redirect(reverse('home:index'))
+        pass

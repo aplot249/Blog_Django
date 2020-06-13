@@ -39,7 +39,7 @@
                        @click="show_menu_click">admin</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: block"
                          v-show="show_menu">
-                        <a class="dropdown-item" href="{% url 'users:write_blog' %}">写文章</a>
+                        <a class="dropdown-item" href="{% url 'users:writeblog' %}">写文章</a>
                         <a class="dropdown-item" href='{% url "users:center" %}'>个人信息</a>
                         <a class="dropdown-item" href="{% url 'users:logout' %}">退出登录</a>
                     </div>
@@ -59,6 +59,7 @@
                 <br>
                 <!-- 提交文章的表单 -->
                 <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <!-- 文章标题图 -->
                     <div class="form-group">
                         <label for="avatar">标题图</label>
@@ -93,9 +94,9 @@
                     <!-- 文章摘要 -->
                     <div class="form-group">
                         <!-- 标签 -->
-                        <label for="sumary">文章摘要</label>
+                        <label for="summary">文章摘要</label>
                         <!-- 文本框 -->
-                        <input type="text" class="form-control" id="sumary" name="sumary">
+                        <input type="text" class="form-control" id="summary" name="summary">
                     </div>
                     <!-- 文章正文 -->
                     <div class="form-group">
@@ -122,7 +123,7 @@
 </div>
 <!--ckeditor-->
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"
-        data-ckeditor-basepath="ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+        data-ckeditor-basepath='{% static "ckeditor/ckeditor/" %}' id="ckeditor-init-script"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <!-- 引入js -->
 <script type="text/javascript" src="{% static 'js/host.js' %}"></script>
