@@ -35,7 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 注册用户子应用
     'users.apps.UsersConfig',
+    # 注册主页子应用
+    'home.apps.HomeConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -53,6 +57,7 @@ ROOT_URLCONF = 'my_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # 设置模板路径
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
@@ -104,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -193,3 +198,15 @@ LOGGING = {
         },
     }
 }
+
+# 替换系统的用户模型为我们自定义的用户模型
+AUTH_USER_MODEL = 'users.User'
+
+# 设置未登录用户跳转的路由
+LOGIN_URL = '/login/'
+
+# 设置图片上传路径
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# 图片的统一路由
+MEDIA_URL = '/media/'

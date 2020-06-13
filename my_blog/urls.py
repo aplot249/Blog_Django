@@ -13,17 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.http import HttpResponse
 
 
 def log(request):
-
     return HttpResponse('test')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', log)
+
+    # include 首先设置一个元组(子应用的路由, 子应用的名字)
+    # 然后设置命名空间 namespace 可以防止不同应用路由重名的问题
+    path('', include(('users.urls', 'users'), namespace='users')),
+    path('', include(('home.urls', 'home'), namespace='home'))
 ]
+
+# 设置图片路由访问规则: 访问 media 的接口会自动访问到本项目目录下的头像文件夹下的静态资源
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
