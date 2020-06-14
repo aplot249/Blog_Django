@@ -1,5 +1,10 @@
 Blog_Django
 ---
+![](https://img-blog.csdnimg.cn/20200613191600362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzk0MTM2NA==,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200614085714357.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzk0MTM2NA==,size_16,color_FFFFFF,t_70)
+
+博客介绍地址:
+[https://blog.csdn.net/weixin_43941364/article/details/106736753](https://blog.csdn.net/weixin_43941364/article/details/106736753)
 ### 作者
     LSU：王硕
 ### 项目介绍
